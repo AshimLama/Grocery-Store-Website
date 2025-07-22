@@ -1,22 +1,27 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Category from './components/Category'
-import FeaturedProducts from './components/FeaturedProducts'
-import Template from './components/Template'
-import Footer from './components/Footer'
+import React from "react";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Shop from "./pages/Shop";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 const App = () => {
   return (
     <>
-      <Navbar/>
-      <Hero/>
-      <Category/>
-      <FeaturedProducts/>
-      <Template/>
-      <Footer/>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home/>}></Route>
+          <Route path="/shop" element={<Shop/>}></Route>
+          <Route path="/about" element={<About/>}></Route>
+          <Route path="/contact" element={<Contact/>}></Route>
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

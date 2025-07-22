@@ -1,5 +1,6 @@
 import { ShoppingCart } from 'lucide-react'
 import React from 'react'
+import CartComp from './CartComp'
 
 const ProductsCard = ({product}) => {
   return (
