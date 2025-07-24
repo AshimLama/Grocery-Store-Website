@@ -1,8 +1,18 @@
 import { ShoppingCart } from 'lucide-react'
 import React from 'react'
 import CartComp from './CartComp'
+import { useDispatch, useSelector } from 'react-redux'
+import {addToCart} from '../Redux/CartSlice'
 
 const ProductsCard = ({product}) => {
+  
+  const dispatch = useDispatch();
+  const {cart} = useSelector(store => store.cart)
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(product))
+  }
+
   return (
     <div className='overflow-hidden transition-all hover:shadow-md border border-gray-200 rounded-lg'>
       <div>
@@ -17,7 +27,7 @@ const ProductsCard = ({product}) => {
         </div>
       </div>
       <div className='p-4 pt-1'>
-        <button className='w-full mt-2 bg-green-600 hover:bg-green-700 text-white flex items-center justify-center py-2 rounded-lg cursor-pointer'><ShoppingCart className='w-4 h-4 mr-2'/> Add to Cart</button>
+        <button onClick={handleAddToCart} className='w-full mt-2 bg-green-600 hover:bg-green-700 text-white flex items-center justify-center py-2 rounded-lg cursor-pointer'><ShoppingCart className='w-4 h-4 mr-2'/> Add to Cart</button>
       </div>
     </div>
   )
