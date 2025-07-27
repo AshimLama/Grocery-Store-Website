@@ -4,12 +4,18 @@ import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 import CartComp from "./CartComp";
 import { useSelector } from "react-redux";
+import { HiMenuAlt1, HiMenuAlt3 } from "react-icons/hi";
+import ResponsiveMenu from "./ResponsiveMenu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const { cart } = useSelector((store) => store.cart);
   const onClose = () => {
     setIsOpen(false);
+  };
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
   };
   isOpen
     ? (document.body.style.overflow = "hidden")
@@ -19,7 +25,7 @@ const Navbar = () => {
       <div className="mx-auto flex justify-between items-center px-6 py-3 fixed top-0 z-20 bg-green-100 w-full border border-gray-100 shadow-xl lg:px=[180px]">
         {/*logo section */}
         <Link to={"/"}>
-          <img src={Logo} alt="" className="md:w-52 w-40 mx-40" />
+          <img src={Logo} alt="" className="md:w-52 w-40 " />
         </Link>
         {/* menu section   */}
         <nav className="flex gap-5">
@@ -43,8 +49,16 @@ const Navbar = () => {
               {cart.length}
             </span>
           </Link>
+          {isNavOpen ? (
+            <HiMenuAlt3 className="h-7 w-7 md:hidden" onClick={toggleNav} />
+          ) : (
+            <HiMenuAlt1 className="h-7 w-7 md:hidden" onClick={toggleNav} />
+          )}
         </nav>
       </div>
+      {isNavOpen && (
+        <ResponsiveMenu isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+      )}
       {isOpen && (
         <div
           className="fixed top-0 left-0 w-full h-full bg-black/70 z-40"

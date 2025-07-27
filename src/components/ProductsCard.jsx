@@ -3,6 +3,7 @@ import React from 'react'
 import CartComp from './CartComp'
 import { useDispatch, useSelector } from 'react-redux'
 import {addToCart} from '../Redux/CartSlice'
+import { toast } from 'react-toastify'
 
 const ProductsCard = ({product}) => {
   
