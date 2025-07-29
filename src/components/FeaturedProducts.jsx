@@ -1,6 +1,7 @@
 import React from 'react'
 import { products } from '../Utils/Data'
 import ProductsCard from './ProductsCard'
+import { Link } from 'react-router-dom'
 
 const FeaturedProducts = () => {
   return (
@@ -15,7 +16,7 @@ const FeaturedProducts = () => {
                 }
             </div>
             <div className='mt-8 text-center'>
-                <button className='rounded-full border py-2 px-3 bg-white  hover:bg-[#ED8830]'>View all Products</button>
+               <Link to={'/shop'}><button className='rounded-full border py-2 px-3 bg-white  hover:bg-[#ED8830]'>View all Products</button></Link> 
             </div>
         </div>
     </section>

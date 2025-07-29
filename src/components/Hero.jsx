@@ -1,5 +1,6 @@
 import React from 'react'
 import HeroImg from "../assets/Hero1.png"
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
@@ -9,8 +10,8 @@ const Hero = () => {
                 <h1 className='text-4xl md:text-5xl font-bold mb-4'>Fresh <span className='text-[#ED8830]'> Groceries </span>Delivered to your Door</h1>
                 <p className='text-lg mb-6'>Shop from our wide selection of fresh fruits, vegetables, dairy, and more. Get same-day delivery!</p>
                 <div className='flex flex-wrap gap-4'>
-                    <button className='bg-white text-green-600 hover:bg-gray-300 cursor-pointer rounded-full px-3 py-1'>Shop Now</button>
-                    <button className='text-white border-white bg-green-700 cursor-pointer hover:bg-orange-400 rounded-full px-3 py-2'>Learn More</button>
+                    <Link to={'/shop'}><button className='bg-white text-green-600 hover:bg-gray-300 cursor-pointer rounded-full px-3 py-2'>Shop Now</button></Link>
+                    <Link to={'/about'}><button className='text-white border-white bg-green-700 cursor-pointer hover:bg-orange-400 rounded-full px-3 py-2'>Learn More</button></Link>
                 </div>
             </div>
             <div className='relative flex justify-center'>

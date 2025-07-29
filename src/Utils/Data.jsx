@@ -10,7 +10,6 @@ import onion from "../assets/onion.avif"
 import tomato from "../assets/tomato.avif"
 import shimla from "../assets/shimla.avif"
 import papaya from "../assets/papaya.avif"
-import cabbage from "../assets/cabbage.avif"
 import beas from "../assets/beas.avif"
 import banana from "../assets/banana.avif"
 import coconut from "../assets/coconut.avif"
@@ -41,7 +40,6 @@ export const products = [
    { id: 10, name: "Jyoti Potato - New Crop (Alu)", category: "Vegetables", price: 29, image: potato2, quantity:"(0.95-1.05) kg", unit:1 },
    { id: 11, name: "Green Capsicum (Shimla Mircha)", category: "Vegetables", price: 23, image: shimla, quantity:"(250-280) g", unit:1 },
    { id: 12, name: "Raw Papaya (Kacha Pepe)", category: "Vegetables", price: 48, image: papaya, quantity:"1 piece (400-600 g)", unit:1 },
-   { id: 13, name: "Cabbage (Bandhakopi)", category: "Vegetables", price: 17, image: cabbage, quantity:"1 piece (400-600 g)", unit:1 },
    { id: 14, name: "French Beans - 250 g (Same)", category: "Vegetables", price: 24, image: beas, quantity:"250g", unit:1 },
    { id: 15, name: "Baby Banana (Kola)", category: "Fruits", price: 32, image: banana, quantity:"4 pieces", unit:1 },
    { id: 16, name: "Brown Coconut (Narkel)", category: "Fruits", price: 55, image: coconut, quantity:"1 piece", unit:1 },

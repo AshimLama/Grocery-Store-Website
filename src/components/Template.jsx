@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Template = () => {
   return (
@@ -10,9 +11,9 @@ const Template = () => {
         <p className="text-lg mb-6 max-w-2xl mx-auto">
           Use code FRESH20 at checkout for free delivery on orders over Rs.250
         </p>
-        <button className="rounded-full bg-green-600 hover:bg-green-700 text-white px-3 py-2 mx-auto">
+        <Link to={'/shop'}><button className="rounded-full bg-green-600 hover:bg-green-700 text-white px-3 py-2 mx-auto">
           Shop Now
-        </button>
+        </button></Link>
       </div>
     </section>
   );
