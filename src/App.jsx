@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -8,6 +8,15 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 
 const App = () => {
+
+  useEffect(() => {
+    if( window.self !== window.top ) {
+      //Inside an iframe, hide scrollbars
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+    }
+  }, []);
+
   return (
     <>
       <BrowserRouter>
